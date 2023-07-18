@@ -81,6 +81,13 @@ export class SohoModuleNavSwitcherComponent implements AfterViewInit, AfterViewC
     this._options.moduleButtonText = val;
     this.updated({ moduleButtonText: this._options.moduleButtonText });
     if (val) this.setModuleButtonTooltipText(val);
+
+    const navSwitcher = (this.modulenavswitcher as any)?.element;
+    if (navSwitcher && !navSwitcher?.data('tooltip')) {
+      navSwitcher.tooltip({ placement: 'right' });
+      navSwitcher.data('tooltip').content = val;
+    }
+
   }
   public get moduleButtonText(): string | undefined {
     return this.modulenavswitcher?.settings.moduleButtonText || this._options.moduleButtonText;
