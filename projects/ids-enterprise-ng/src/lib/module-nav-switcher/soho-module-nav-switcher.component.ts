@@ -80,7 +80,6 @@ export class SohoModuleNavSwitcherComponent implements AfterViewInit, AfterViewC
   @Input() set moduleButtonText(val: string | undefined) {
     this._options.moduleButtonText = val;
     this.updated({ moduleButtonText: this._options.moduleButtonText });
-    if (val) this.setModuleButtonTooltipText(val);
 
     const navSwitcher = (this.modulenavswitcher as any)?.element;
     if (navSwitcher && !navSwitcher?.data('tooltip')) {
@@ -164,11 +163,6 @@ export class SohoModuleNavSwitcherComponent implements AfterViewInit, AfterViewC
   /** Sets the roles array programmatically */
   setRoles(val: Array<SohoModuleNavSwitcherRoleRecord>) {
     this.roles = val;
-  }
-
-  /** */
-  setModuleButtonTooltipText(val: string) {
-    this.modulenavswitcher?.setModuleButtonTooltipText(val);
   }
 
   /** Triggered by a Module Button click */
