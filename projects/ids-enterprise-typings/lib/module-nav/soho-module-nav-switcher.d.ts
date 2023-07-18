@@ -62,6 +62,12 @@ interface SohoModuleNavSwitcherStatic {
   /** Changes the Module Nav Switcher's Display Mode */
   setDisplayMode(val?: SohoModuleNavDisplayMode): void;
 
+  /** Sets the Module Button Icon based on internal settings */
+  setModuleButtonIcon(): void;
+
+  /** Sets the Module Button's Tooltip text content */
+  setModuleButtonTooltipText(val: string): void;
+
   /** Sets visible */
   setRoles(val?: SohoModuleNavSwitcherRoleRecord[], doUpdate?: boolean): void;
 

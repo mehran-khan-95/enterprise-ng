@@ -79,6 +79,14 @@ export class ModuleNavDemoComponent implements AfterViewInit {
     console.dir('Module Nav Settings Menu closed', e);
   }
 
+  toggleModuleButtonTextContents() {
+    this.ngZone.runOutsideAngular(() => {
+      if (this.moduleNavSwitcher) {
+        this.moduleNavSwitcher.moduleButtonText = 'Test';
+      }
+    });
+  }
+
   // ------------------------------------------
   // Lifecycle Events
   // ------------------------------------------
