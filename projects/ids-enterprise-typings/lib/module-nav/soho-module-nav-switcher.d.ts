@@ -65,6 +65,9 @@ interface SohoModuleNavSwitcherStatic {
   /** Sets the Module Button Icon based on internal settings */
   setModuleButtonIcon(): void;
 
+  /** Sets the Module Button Tooltip's text directly (temporary) */
+  setModuleButtonTooltipText(val: string): void;
+
   /** Sets visible */
   setRoles(val?: SohoModuleNavSwitcherRoleRecord[], doUpdate?: boolean): void;
 

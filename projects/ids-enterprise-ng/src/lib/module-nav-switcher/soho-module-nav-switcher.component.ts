@@ -165,6 +165,11 @@ export class SohoModuleNavSwitcherComponent implements AfterViewInit, AfterViewC
     this.roles = val;
   }
 
+  /** Sets the text content of the Module Button's tooltip */
+  setModuleButtonTooltipText(val: string) {
+    this.modulenavswitcher?.setModuleButtonTooltipText(val);
+  }
+
   /** Triggered by a Module Button click */
   onModuleButtonClick(event: JQuery.TriggeredEvent) {
     this.modulebuttonclick.emit(event);
